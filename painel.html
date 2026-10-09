@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Painel do Professor</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+    <header>
+
+        <div>
+
+            <h1>Plataforma do Professor</h1>
+
+            <p>
+                Organize suas provas e materiais
+            </p>
+
+        </div>
+
+        <div class="acoes-header">
+
+            <button onclick="alternarTema()">
+                🌙 Tema
+            </button>
+
+            <button onclick="sair()">
+                Sair
+            </button>
+
+        </div>
+
+    </header>
+
+
+    <main>
+
+        <!-- BOAS VINDAS -->
+
+        <section class="boas-vindas">
+
+            <h2>
+                Olá, Professor! 
+            </h2>
+
+            <p>
+                Aqui você pode organizar seus gabaritos,
+                materiais e calendário de aulas.
+            </p>
+
+        </section>
+
+
+        <!-- DASHBOARD -->
+
+        <section class="dashboard">
+
+            <div class="resumo">
+
+                <span></span>
+
+                <div>
+
+                    <strong id="totalGabaritos">
+                        0
+                    </strong>
+
+                    <p>Gabaritos</p>
+
+                </div>
+
+            </div>
+
+
+            <div class="resumo">
+
+                <span></span>
+
+                <div>
+
+                    <strong id="totalMateriais">
+                        0
+                    </strong>
+
+                    <p>Materiais</p>
+
+                </div>
+
+            </div>
+
+
+            <div class="resumo">
+
+                <span></span>
+
+                <div>
+
+                    <strong id="totalProvas">
+                        0
+                    </strong>
+
+                    <p>Provas marcadas</p>
+
+                </div>
+
+            </div>
+
+
+            <div class="resumo">
+
+                <span></span>
+
+                <div>
+
+                    <strong id="totalEventos">
+                        0
+                    </strong>
+
+                    <p>Eventos</p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- GABARITOS -->
+
+        <section class="card">
+
+            <h2>
+                 Gabaritos de Provas
+            </h2>
+
+            <div class="form-grid">
+
+                <input
+                    type="text"
+                    id="nomeProva"
+                    placeholder="Nome da prova"
+                >
+
+                <input
+                    type="text"
+                    id="materiaProva"
+                    placeholder="Matéria"
+                >
+
+                <input
+                    type="text"
+                    id="turmaProva"
+                    placeholder="Turma"
+                >
+
+                <input
+                    type="date"
+                    id="dataProva"
+                >
+
+            </div>
+
+            <textarea
+                id="gabarito"
+                placeholder="Exemplo: 1-A, 2-C, 3-B, 4-D..."
+            ></textarea>
+
+            <button onclick="adicionarGabarito()">
+                Salvar Gabarito
+            </button>
+
+            <button
+                class="botao-secundario"
+                onclick="cancelarEdicaoGabarito()"
+                id="cancelarGabarito"
+            >
+                Cancelar edição
+            </button>
+
+            <input
+                class="pesquisa"
+                type="text"
+                id="pesquisaGabarito"
+                placeholder=" Pesquisar gabarito..."
+                oninput="mostrarGabaritos()"
+            >
+
+            <div id="listaGabaritos"></div>
+
+        </section>
+
+
+        <!-- MATERIAIS -->
+
+        <section class="card">
+
+            <h2>
+                 Slides e Materiais
+            </h2>
+
+            <div class="form-grid">
+
+                <input
+                    type="text"
+                    id="nomeMaterial"
+                    placeholder="Nome do material"
+                >
+
+                <input
+                    type="text"
+                    id="materiaMaterial"
+                    placeholder="Matéria"
+                >
+
+                <input
+                    type="text"
+                    id="turmaMaterial"
+                    placeholder="Turma"
+                >
+
+                <select id="tipoMaterial">
+
+                    <option value="Slide">
+                        Slide
+                    </option>
+
+                    <option value="PDF">
+                        PDF
+                    </option>
+
+                    <option value="Vídeo">
+                        Vídeo
+                    </option>
+
+                    <option value="Documento">
+                        Documento
+                    </option>
+
+                </select>
+
+            </div>
+
+            <input
+                type="text"
+                id="linkMaterial"
+                placeholder="Link do Google Drive, Canva, Slides..."
+            >
+
+            <button onclick="adicionarMaterial()">
+                Salvar Material
+            </button>
+
+            <button
+                class="botao-secundario"
+                onclick="cancelarEdicaoMaterial()"
+                id="cancelarMaterial"
+            >
+                Cancelar edição
+            </button>
+
+            <input
+                class="pesquisa"
+                type="text"
+                id="pesquisaMaterial"
+                placeholder=" Pesquisar material..."
+                oninput="mostrarMateriais()"
+            >
+
+            <div id="listaMateriais"></div>
+
+        </section>
+
+
+        <!-- CALENDÁRIO -->
+
+        <section class="card">
+
+            <h2>
+                 Calendário de Aulas
+            </h2>
+
+            <p>
+                Clique em uma data para marcar o que acontecerá nesse dia.
+            </p>
+
+            <div class="calendario">
+
+                <div class="mes">
+
+                    <button onclick="mesAnterior()">
+                        ‹
+                    </button>
+
+                    <h3 id="mesAno"></h3>
+
+                    <button onclick="mesProximo()">
+                        ›
+                    </button>
+
+                </div>
+
+
+                <div class="dias-semana">
+
+                    <div>Dom</div>
+                    <div>Seg</div>
+                    <div>Ter</div>
+                    <div>Qua</div>
+                    <div>Qui</div>
+                    <div>Sex</div>
+                    <div>Sáb</div>
+
+                </div>
+
+
+                <div
+                    id="dias"
+                    class="dias"
+                ></div>
+
+
+                <div class="legenda">
+
+                    <span>🟢 Aula</span>
+
+                    <span>🔴 Sem aula</span>
+
+                    <span>🟡 Prova</span>
+
+                    <span>🔵 Atividade</span>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- PRÓXIMOS EVENTOS -->
+
+        <section class="card">
+
+            <h2>
+                 Próximos eventos
+            </h2>
+
+            <div id="proximosEventos"></div>
+
+        </section>
+
+
+        <!-- MODAL -->
+
+        <div
+            id="modalCalendario"
+            class="modal"
+        >
+
+            <div class="modal-conteudo">
+
+                <h2 id="dataSelecionada"></h2>
+
+                <label>
+                    O que terá nesse dia?
+                </label>
+
+                <select
+                    id="tipoDia"
+                    onchange="atualizarCamposProva()"
+                >
+
+                    <option value="aula">
+                        🟢 Aula
+                    </option>
+
+                    <option value="sem-aula">
+                        🔴 Sem aula
+                    </option>
+
+                    <option value="prova">
+                        🟡 Prova
+                    </option>
+
+                    <option value="atividade">
+                        🔵 Atividade
+                    </option>
+
+                </select>
+
+
+                <div id="informacoesProva">
+
+                    <input
+                        type="text"
+                        id="nomeProvaCalendario"
+                        placeholder="Nome da prova"
+                    >
+
+                    <textarea
+                        id="conteudoProva"
+                        placeholder="Conteúdo da prova"
+                    ></textarea>
+
+                </div>
+
+
+                <div id="informacoesAtividade">
+
+                    <input
+                        type="text"
+                        id="nomeAtividade"
+                        placeholder="Nome da atividade"
+                    >
+
+                    <textarea
+                        id="descricaoAtividade"
+                        placeholder="Descrição da atividade"
+                    ></textarea>
+
+                </div>
+
+
+                <input
+                    type="text"
+                    id="materiaEvento"
+                    placeholder="Matéria"
+                >
+
+                <input
+                    type="time"
+                    id="horarioEvento"
+                >
+
+
+                <div class="botoes-modal">
+
+                    <button onclick="salvarDia()">
+                        Salvar
+                    </button>
+
+                    <button
+                        class="botao-cancelar"
+                        onclick="excluirDia()"
+                    >
+                        Excluir evento
+                    </button>
+
+                    <button
+                        class="botao-cancelar"
+                        onclick="fecharModal()"
+                    >
+                        Cancelar
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </main>
+
+
+    <footer>
+
+        <p>
+            Plataforma Professor - Projeto Escolar
+        </p>
+
+    </footer>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>

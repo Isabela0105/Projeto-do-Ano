@@ -1,0 +1,692 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #eef6ff;
+    color: #16324f;
+    transition: 0.3s;
+}
+
+button {
+    background-color: #1565c0;
+    color: white;
+    padding: 11px 20px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    margin-top: 5px;
+}
+
+button:hover {
+    background-color: #0d47a1;
+}
+
+
+/* LOGIN */
+
+.pagina-login {
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background: linear-gradient(
+        135deg,
+        #47859d,
+        #0d47a1
+    );
+}
+
+.login {
+    background-color: white;
+
+    width: 380px;
+    max-width: 90%;
+
+    padding: 35px;
+
+    border-radius: 15px;
+
+    text-align: center;
+
+    box-shadow:
+        0 8px 25px rgba(0,0,0,0.25);
+}
+
+.login h1 {
+    color: #0d47a1;
+    margin-bottom: 10px;
+}
+
+.login p {
+    margin-bottom: 20px;
+    color: #555;
+}
+
+.login input {
+    width: 100%;
+
+    padding: 12px;
+
+    margin-top: 10px;
+
+    border: 1px solid #90caf9;
+
+    border-radius: 6px;
+}
+
+.login > button {
+    width: 100%;
+    margin-top: 15px;
+}
+
+.login small {
+    display: block;
+
+    margin-top: 20px;
+
+    color: #777;
+}
+
+.campo-senha {
+    position: relative;
+}
+
+.campo-senha input {
+    padding-right: 45px;
+}
+
+.mostrar-senha {
+    position: absolute;
+
+    right: 5px;
+    top: 10px;
+
+    margin: 0;
+
+    padding: 8px;
+
+    background: transparent;
+
+    color: #1565c0;
+}
+
+#mensagem {
+    color: red;
+    margin-top: 15px;
+}
+
+
+/* CABEÇALHO */
+
+header {
+    background-color: #0d47a1;
+
+    color: white;
+
+    padding: 20px 8%;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    gap: 20px;
+}
+
+header p {
+    margin-top: 5px;
+    color: #bbdefb;
+}
+
+.acoes-header {
+    display: flex;
+    gap: 8px;
+}
+
+header button {
+    background-color: white;
+    color: #0d47a1;
+}
+
+
+/* CONTEÚDO */
+
+main {
+    width: 85%;
+    max-width: 1200px;
+
+    margin: 30px auto;
+}
+
+.boas-vindas {
+    background-color: #bbdefb;
+
+    padding: 25px;
+
+    border-radius: 10px;
+
+    margin-bottom: 25px;
+}
+
+.boas-vindas h2 {
+    color: #0d47a1;
+
+    margin-bottom: 8px;
+}
+
+.card {
+    background-color: white;
+
+    padding: 25px;
+
+    margin-bottom: 25px;
+
+    border-radius: 12px;
+
+    box-shadow:
+        0 3px 10px rgba(0,0,0,0.1);
+}
+
+.card h2 {
+    color: #1565c0;
+
+    margin-bottom: 15px;
+}
+
+.card textarea {
+    width: 100%;
+
+    height: 100px;
+
+    resize: vertical;
+
+    padding: 12px;
+
+    margin: 10px 0;
+
+    border: 1px solid #90caf9;
+
+    border-radius: 6px;
+}
+
+.card input,
+.card select {
+    width: 100%;
+
+    padding: 12px;
+
+    border: 1px solid #90caf9;
+
+    border-radius: 6px;
+}
+
+.form-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 10px;
+}
+
+.pesquisa {
+    margin-top: 20px;
+}
+
+
+/* DASHBOARD */
+
+.dashboard {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 15px;
+
+    margin-bottom: 25px;
+}
+
+.resumo {
+    background-color: white;
+
+    padding: 20px;
+
+    border-radius: 10px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+    box-shadow:
+        0 3px 8px rgba(0,0,0,0.1);
+}
+
+.resumo span {
+    font-size: 30px;
+}
+
+.resumo strong {
+    font-size: 25px;
+
+    color: #0d47a1;
+}
+
+.resumo p {
+    color: #666;
+
+    margin-top: 4px;
+}
+
+
+/* ITENS */
+
+.item {
+    background-color: #e3f2fd;
+
+    border-left:
+        5px solid #1565c0;
+
+    padding: 15px;
+
+    margin-top: 15px;
+
+    border-radius: 5px;
+}
+
+.item h3 {
+    color: #0d47a1;
+}
+
+.item p {
+    margin-top: 7px;
+}
+
+.item a {
+    color: #1565c0;
+
+    font-weight: bold;
+}
+
+.item button {
+    margin-right: 5px;
+}
+
+.botao-excluir,
+.botao-cancelar {
+    background-color: #78909c;
+}
+
+.botao-excluir {
+    background-color: #d32f2f;
+}
+
+.botao-excluir:hover {
+    background-color: #b71c1c;
+}
+
+.botao-secundario {
+    display: none;
+
+    background-color: #78909c;
+}
+
+
+/* CALENDÁRIO */
+
+.calendario {
+    margin-top: 20px;
+}
+
+.mes {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    margin-bottom: 20px;
+}
+
+.mes h3 {
+    color: #0d47a1;
+
+    font-size: 22px;
+}
+
+.mes button {
+    width: 45px;
+    height: 40px;
+
+    font-size: 25px;
+
+    padding: 0;
+}
+
+.dias-semana,
+.dias {
+    display: grid;
+
+    grid-template-columns:
+        repeat(7, 1fr);
+
+    gap: 5px;
+}
+
+.dias-semana {
+    margin-bottom: 5px;
+}
+
+.dias-semana div {
+    text-align: center;
+
+    font-weight: bold;
+
+    color: #0d47a1;
+
+    padding: 10px 0;
+}
+
+.dia {
+    min-height: 80px;
+
+    border:
+        1px solid #bbdefb;
+
+    border-radius: 8px;
+
+    background-color: #f8fcff;
+
+    padding: 10px;
+
+    cursor: pointer;
+
+    font-weight: bold;
+
+    transition: 0.2s;
+}
+
+.dia:hover {
+    background-color: #e3f2fd;
+
+    transform: scale(1.02);
+}
+
+.dia.hoje {
+    border:
+        2px solid #1565c0;
+}
+
+.dia.tem-aula {
+    background-color: #48a04b;
+
+    border-color: #308935;
+
+    color: white;
+}
+
+.dia.sem-aula {
+    background-color: #ffcdd2;
+
+    border-color: #e53935;
+}
+
+.dia.prova {
+    background-color: #fff59d;
+
+    border-color: #f9a825;
+}
+
+.dia.atividade {
+    background-color: #bbdefb;
+
+    border-color: #1976d2;
+}
+
+.info-dia {
+    display: block;
+
+    font-size: 11px;
+
+    margin-top: 8px;
+
+    font-weight: normal;
+}
+
+.dia-vazio {
+    min-height: 80px;
+}
+
+.legenda {
+    display: flex;
+
+    gap: 20px;
+
+    flex-wrap: wrap;
+
+    margin-top: 20px;
+
+    font-size: 14px;
+}
+
+
+/* MODAL */
+
+.modal {
+    display: none;
+
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    background-color:
+        rgba(0,0,0,0.5);
+
+    justify-content: center;
+
+    align-items: center;
+
+    z-index: 1000;
+}
+
+.modal-conteudo {
+    background-color: white;
+
+    width: 450px;
+
+    max-width: 90%;
+
+    max-height: 90vh;
+
+    overflow-y: auto;
+
+    padding: 25px;
+
+    border-radius: 12px;
+}
+
+.modal-conteudo h2 {
+    color: #0d47a1;
+
+    margin-bottom: 20px;
+}
+
+.modal-conteudo input,
+.modal-conteudo select,
+.modal-conteudo textarea {
+    width: 100%;
+
+    padding: 12px;
+
+    margin: 8px 0;
+
+    border:
+        1px solid #90caf9;
+
+    border-radius: 6px;
+}
+
+.modal-conteudo textarea {
+    height: 80px;
+
+    resize: vertical;
+}
+
+#informacoesProva,
+#informacoesAtividade {
+    display: none;
+}
+
+.botoes-modal {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 5px;
+
+    margin-top: 5px;
+}
+
+
+/* PRÓXIMOS EVENTOS */
+
+.evento-proximo {
+    padding: 12px;
+
+    margin-top: 10px;
+
+    border-left:
+        4px solid #1565c0;
+
+    background-color: #e3f2fd;
+
+    border-radius: 5px;
+}
+
+
+/* RODAPÉ */
+
+footer {
+    text-align: center;
+
+    background-color: #0d47a1;
+
+    color: white;
+
+    padding: 20px;
+
+    margin-top: 40px;
+}
+
+
+/* MODO ESCURO */
+
+body.modo-escuro {
+    background-color: #17202a;
+
+    color: #eeeeee;
+}
+
+body.modo-escuro .card,
+body.modo-escuro .resumo,
+body.modo-escuro .modal-conteudo {
+    background-color: #263238;
+
+    color: white;
+}
+
+body.modo-escuro .boas-vindas {
+    background-color: #34495e;
+}
+
+body.modo-escuro .item,
+body.modo-escuro .evento-proximo {
+    background-color: #37474f;
+}
+
+body.modo-escuro input,
+body.modo-escuro textarea,
+body.modo-escuro select {
+    background-color: #37474f;
+
+    color: white;
+}
+
+body.modo-escuro .dia {
+    background-color: #37474f;
+
+    color: white;
+}
+
+body.modo-escuro .dia.prova {
+    color: #333;
+}
+
+
+/* CELULAR */
+
+@media (max-width: 800px) {
+
+    .dashboard {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+
+    header {
+        flex-direction: column;
+
+        align-items: flex-start;
+    }
+}
+
+@media (max-width: 600px) {
+
+    main {
+        width: 92%;
+    }
+
+    .dashboard {
+        grid-template-columns: 1fr;
+    }
+
+    .dias {
+        gap: 3px;
+    }
+
+    .dia {
+        min-height: 60px;
+
+        padding: 6px;
+
+        font-size: 13px;
+    }
+
+    .dia-vazio {
+        min-height: 60px;
+    }
+
+    .dias-semana div {
+        font-size: 12px;
+    }
+
+    .info-dia {
+        font-size: 9px;
+    }
+}

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Login - Plataforma Professor</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="pagina-login">
+
+    <div class="login">
+
+        <h1>Área do Professor</h1>
+
+        <p>Entre para acessar seus materiais</p>
+
+        <input
+            type="email"
+            id="email"
+            placeholder="Digite seu e-mail"
+        >
+
+        <div class="campo-senha">
+
+            <input
+                type="password"
+                id="senha"
+                placeholder="Digite sua senha"
+            >
+
+            <button
+                type="button"
+                class="mostrar-senha"
+                onclick="mostrarSenha()"
+            >
+                👁
+            </button>
+
+        </div>
+
+        <button onclick="entrar()">
+            Entrar
+        </button>
+
+        <p id="mensagem"></p>
+
+        
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
